@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>jo.demo.drools</groupId>
+    <artifactId>drools-demo</artifactId>
+    <version>1.0.0</version>
+    <relativePath>..\pom.xml</relativePath>
+  </parent>
+  
+  <artifactId>default-kiesession</artifactId>
+  
+  <dependencies>
+  	<dependency>
+  	  <groupId>org.drools</groupId>
+  	  <artifactId>drools-compiler</artifactId>
+  	</dependency>
+  	<!-- 继承的父POM中，maven-enforcer-plugin设置了enforce-direct-dependencies，
+  	强制要求直接依赖，而不允许间接依赖。因此，必须显式配置kie-api，虽然drools-compiler已经依赖了它 -->
+  	<dependency>
+      <groupId>org.kie</groupId>
+      <artifactId>kie-api</artifactId>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <finalName>default-kiesession</finalName>
+  </build>
+</project>
